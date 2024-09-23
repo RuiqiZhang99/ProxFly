@@ -1,13 +1,17 @@
-# ProxFly (UC Berkeley HiPeR Lab)
+# (UNDER CONSTRUCTION) ProxFly (UC Berkeley HiPeR Lab)
 Hi there! This is the official codebase of our ICRA 2025 submission
 
-[*ProxFly: Robust Control for Close Proximity Quadcopter Flight via Residual Reinforcement Learning*](https://arxiv.org/abs/2409.13193).
+[**ProxFly: Robust Control for Close Proximity Quadcopter Flight via Residual Reinforcement Learning**](https://arxiv.org/abs/2409.13193).
 
 The multimedia is also available at Youtube.
 [![Cover](figures/cover.png)](https://www.youtube.com/watch?v=NhPKgzd3l6w)
 
 ## Environment Setup
+```
+bash setup.bash
+```
 
+## Notation
 
 
 ## Citation
