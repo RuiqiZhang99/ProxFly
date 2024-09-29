@@ -1,7 +1,7 @@
 from __future__ import division, print_function
 import numpy as np
-from py3dmath import Vec3, Rotation  # get from https://github.com/muellerlab/py3dmath
-from motor import Motor
+from env.py3dmath import Vec3, Rotation  # get from https://github.com/muellerlab/py3dmath
+from env.motor import Motor
 
 class Vehicle:
     def __init__(self, mass, inertiaMatrix, omegaSqrToDragTorque, disturbanceTorqueStdDev):
@@ -27,18 +27,20 @@ class Vehicle:
         return
         
         
-    def run(self, dt, motorCmds,spdCmd=False): # TODO: spd cmd 
+    def run(self, dt, motorCmds, spdCmd=False): # TODO: spd cmd 
         
         
-        totalForce_b  = Vec3(0,0,0)
-        totalTorque_b = Vec3(0,0,0)
-        for (mot,thrustCmd) in zip(self._motors, motorCmds):
-            mot.run(dt, thrustCmd,spdCmd)
+        totalForce_b  = Vec3(0, 0, 0)
+        totalTorque_b = Vec3(0, 0, 0)
+        for (mot, thrustCmd) in zip(self._motors, motorCmds):
+            mot.run(dt, thrustCmd, spdCmd)
             
             totalForce_b  += mot._thrust
             totalTorque_b += mot._torque
         
-        totalTorque_b += (- self._omega.norm2()*self._omegaSqrToDragTorque*self._omega)
+        dragTorque = -self._omega.norm2()*self._omegaSqrToDragTorque*self._omega
+        # print('Drag Torque: {}'.format(dragTorque))
+        totalTorque_b += dragTorque
         
         #add noise:
         totalTorque_b += Vec3(np.random.normal(), np.random.normal(), np.random.normal())*self._disturbanceTorqueStdDev

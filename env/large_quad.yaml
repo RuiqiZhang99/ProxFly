@@ -1,0 +1,55 @@
+# large_quad.yaml
+
+#==============================================================================
+# Define the vehicle
+#==============================================================================
+
+Mass: 0.85  # kg
+Inertia:
+  Ixx: 0.005507
+  Iyy: 0.005507
+  Izz: 0.009877
+  Ixy: 0
+  Ixz: 0
+  Iyz: 0
+OmegaSqrToDragTorque:
+  Matrix:
+    - [0, 0, 0]
+    - [0, 0, 0]
+    - [0, 0, 0.00014]
+ArmLength: 0.165  # m
+MassRandom: [0.5, 1.5]
+InertiaRandom: [0.8, 1.2]
+
+#==============================================================================
+# Define the Motors
+#==============================================================================
+MotSpeedSqrToThrust: 7.64e-6  # propeller coefficient
+ThrustRandom: [0.6, 1.2]
+MotSpeedSqrToTorque: 1.07e-7  # propeller coefficient
+MotInertia: 1.5e-5  # inertia of all rotating parts (motor + prop) [kg.m**2]
+MotTimeConst: 0.06  # time constant with which motor's speed responds [s]
+MotMinSpeed: 0  # [rad/s]
+MotMaxSpeed: 1400  # [rad/s]
+TiltAngle: 0.0  # radians
+
+#==============================================================================
+# Define the disturbance
+#==============================================================================
+StdDevTorqueDisturbance: 0.001  # [N.m]
+
+#==============================================================================
+# Define the position controller
+#==============================================================================
+PosCtrlNatFreq: 2.0  # rad/s
+PosCtrlDampingRatio: 0.7  # -
+#==============================================================================
+# Define the attitude controller
+#==============================================================================
+TimeConstRatesRP: 0.0457  # [s]
+TimeConstRatesY: 0.2545  # [s]
+
+TimeConstAngleRP: 0.0914  # [s]
+TimeConstAngleY: 0.5089  # [s]
+
+

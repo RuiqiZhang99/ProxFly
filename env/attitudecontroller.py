@@ -1,6 +1,6 @@
 from __future__ import division, print_function
 
-from py3dmath import Vec3, Rotation  # get from https://github.com/muellerlab/py3dmath
+from env.py3dmath import Vec3, Rotation  # get from https://github.com/muellerlab/py3dmath
 import numpy as np
 
 class QuadcopterAttitudeControllerNested:
@@ -46,7 +46,7 @@ class QuadcopterAttitudeControllerNested:
         
         return desAngAcc
     
-    def get_angular_velocity(self, desNormThrust, curAtt, curAngVel):
+    def get_angular_velocity(self, desNormThrust, curAtt):
         #Step 1: compute desired rates:
         # 1.1: construct a desired attitude, that matches the desired thrust direction
         desThrustDir = desNormThrust / desNormThrust.norm2()
@@ -68,7 +68,6 @@ class QuadcopterAttitudeControllerNested:
         desAngVel.x = desRotVec.x/self._timeConstAngle_RP
         desAngVel.y = desRotVec.y/self._timeConstAngle_RP
         desAngVel.z = desRotVec.z/self._timeConstAngle_Y
-
         
         return desAngVel
         

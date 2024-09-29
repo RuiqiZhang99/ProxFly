@@ -14,6 +14,5 @@ echo "Setting up the project..."
 git submodule update --init --recursive
 
 cd $PROJECT_PATH
-conda env create -f environment.yml
-conda activate proxfly
-echo "Have a safe flight!"
+conda env create -f environment.yaml
+conda init

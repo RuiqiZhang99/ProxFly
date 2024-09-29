@@ -1,7 +1,7 @@
 from __future__ import print_function, division
 
 import numpy as np
-from py3dmath import Vec3  # get from https://github.com/muellerlab/py3dmath
+from env.py3dmath import Vec3  # get from https://github.com/muellerlab/py3dmath
 
 class Motor:
     def __init__(self, position, rotAxis, minSpeed, maxSpeed, speedSqrToThrust, 

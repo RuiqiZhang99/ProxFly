@@ -4,8 +4,8 @@ from matplotlib import pyplot as plt
 
 from matplotlib import animation
 
-from pyplot3d.uav import Uav
-from pyplot3d.utils import ypr_to_R
+from env.pyplot3d.uav import Uav
+from env.pyplot3d.utils import ypr_to_R
 import pandas as pd
 
 
