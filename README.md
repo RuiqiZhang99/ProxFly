@@ -1,5 +1,5 @@
 # ProxFly 
-Hi there! This is the official codebase of our ICRA 2025 submission
+Hi there! This is the codebase of our ICRA 2025 paper
 
 [**ProxFly: Robust Control for Close Proximity Quadcopter Flight via Residual Reinforcement Learning**](https://arxiv.org/abs/2409.13193).
 
@@ -32,3 +32,8 @@ If you use this code in an academic context, please cite the following publicati
       url={https://arxiv.org/abs/2409.13193}, 
 }
 ```
+
+## Acknowledgement
+This work is supported by Hong Kong Center for Logistics Robotics (HKCLR). 
+
+The experimental testbed at the [HiPeR Lab](https://hiperlab.berkeley.edu/members/) is the result of contributions of many people.
